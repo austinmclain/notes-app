@@ -1,0 +1,12 @@
+#note_input,
+textarea {
+    width: 90%;
+}
+
+#new_note {
+    text-align: center;
+}
+
+#note_content {
+    height: 300px;
+}

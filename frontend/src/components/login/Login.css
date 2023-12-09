@@ -1,0 +1,10 @@
+#login {
+    margin: auto;
+    width: 50%;
+    padding: 10px;
+}
+
+#login_form,
+#login_heading {
+    text-align: center;
+}

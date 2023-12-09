@@ -1,7 +1,8 @@
 import isCorrectLoginInfo from "../../api/isCorrectLoginInfo";
+import "./Login.css"
 
 export default function Login(props) {
-    const { setCurrentAccount } = props;
+    const { setCurrentUser } = props;
 
     async function attemptLogin(event) {
         event.preventDefault();
@@ -11,7 +12,7 @@ export default function Login(props) {
 
         try {
             const loginAttempt = await isCorrectLoginInfo(username, password);
-            if (loginAttempt) { setCurrentAccount(username); }
+            if (loginAttempt) { setCurrentUser(username); }
             return;
         } catch (err) {
             console.log(err);
@@ -19,12 +20,14 @@ export default function Login(props) {
     }
 
     return (
-        <div>
-            <h1>Login</h1>
-            <form onSubmit={(event) => attemptLogin(event)}>
+        <div id="login">
+            <h1 id="login_heading">Login</h1>
+            <br></br>
+            <form id="login_form" onSubmit={(event) => attemptLogin(event)}>
                 <input type="username" placeholder="Username"></input>
                 <br></br>
                 <input type="password" placeholder="Password"></input>
+                <br></br>
                 <br></br>
                 <button>Submit</button>
             </form>
